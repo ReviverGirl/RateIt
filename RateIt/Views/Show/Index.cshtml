@@ -1,0 +1,78 @@
+﻿@model IEnumerable<RateItModels.Show.ShowListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Show Index</h2>
+<p style="font-size:large;">
+    @Html.ActionLink("Create A New Show", "Create")
+</p>
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+}
+<table class="table" style="color:black; font-size: medium;">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DirectorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GenreOfShow)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateRelease)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShowId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShowName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DirectorName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GenreOfShow)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateRelease)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ShowId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ShowId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ShowId })
+            </td>
+        </tr>
+    }
+
+</table>
+<p style="font-size:large;">
+
+    @Html.ActionLink("Back to List", "AllShows", "Show")
+
+</p>

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<RateItModels.Review.ReviewListItem>
+
+@{
+    ViewBag.Title = "AllReviews";
+}
+
+<h2>All Reviews</h2>
+
+
+<table class="table" align="center"  style="font-family:Arial; text-align:left; ">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ReviewId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rating)
+        </th>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.MovieId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MusicId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowId)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) 
+     {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReviewId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.MovieId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MusicId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShowId)
+            </td>
+        </tr>
+     }
+
+</table>

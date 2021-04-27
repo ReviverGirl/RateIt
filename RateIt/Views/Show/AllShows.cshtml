@@ -1,0 +1,79 @@
+﻿@model IEnumerable<RateItData.Show>
+
+@{
+    ViewBag.Title = "AllShows";
+}
+
+<h2>All Shows</h2>
+
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ShowId)
+        </th>
+        <th>
+            @Html.ActionLink("Show Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DirectorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GenreOfShow)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duration)
+        </th>
+        <th>
+            @Html.ActionLink("Date Release", "Index", new { sortOrder = ViewBag.DateSortParm })
+        </th>
+
+        <th></th>
+    </tr>
+
+    @if (Model.Count() == 0)
+    {
+        <tr>
+            <td colspan="6">Your search doesn't exist.Clear the search box and press search to go back to previous view.</td>
+        </tr>
+    }
+    else
+    { 
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShowId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShowName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DirectorName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GenreOfShow)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Duration)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateRelease)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { id = item.ShowId })
+
+                </td>
+            </tr>
+        }
+    }
+
+    </table>

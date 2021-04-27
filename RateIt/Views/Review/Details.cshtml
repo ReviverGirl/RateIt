@@ -1,0 +1,85 @@
+﻿@model RateItModels.Review.ReviewDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div style="color:black; font-size: 20px;">
+    <h4>ReviewDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ReviewId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReviewId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedUtc)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MovieId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MovieId)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MusicId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MusicId)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShowId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShowId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id = Model.ReviewId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

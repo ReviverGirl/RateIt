@@ -1,0 +1,137 @@
+﻿@model RateItModels.MusicReviewView
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detail</h2>
+
+<div style="color:black; font-size: 20px;">
+    <h4>MusicDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Music.MusicId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Music.MusicId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Music.ArtistName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Music.ArtistName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Music.Duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Music.Duration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Music.GenreOfMusic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Music.GenreOfMusic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Music.TypeOfMusic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Music.TypeOfMusic)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Music.DateRelease)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Music.DateRelease)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Music.CreatedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Music.CreatedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Music.ModifiedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Music.ModifiedUtc)
+        </dd>
+
+    </dl>
+</div>
+
+<p style="font-size: x-large;">Avg Rating***** @ViewBag.AverageRating</p>
+<hr />
+
+    @foreach (var review in Model.Reviews)
+     {
+        <div>
+            <h4>ReviewDetail</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => review.ReviewId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => review.ReviewId)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => review.Content)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => review.Content)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => review.Rating)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => review.Rating)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => review.CreatedUtc)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => review.CreatedUtc)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => review.ModifiedUtc)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => review.ModifiedUtc)
+                </dd>
+
+            </dl>
+        </div>
+     }
+<p style="font-size:large;">
+    @Html.ActionLink("Back to List", "AllMusic","Music") |
+    @Html.ActionLink("Create Review", "CreateMusicReview", "Review", new { ID = Model.Music.MusicId }, null)
+
+</p>

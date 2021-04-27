@@ -1,0 +1,136 @@
+﻿@model RateItModels.ShowReviewView
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div style="color:black; font-size: 20px;">
+    <h4>ShowDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Show.ShowId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Show.ShowId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Show.ShowName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Show.ShowName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Show.DirectorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Show.DirectorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Show.Duration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Show.Duration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Show.GenreOfShow)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Show.GenreOfShow)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Show.DateRelease)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Show.DateRelease)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Show.CreatedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Show.CreatedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Show.ModifiedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Show.ModifiedUtc)
+        </dd>
+
+    </dl>
+</div>
+
+<p style="font-size: x-large;">Avg Rating***** @ViewBag.AverageRating</p>
+<hr />
+
+    @foreach (var review in Model.Reviews)
+     {
+        <div>
+            <h4>ReviewDetail</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => review.ReviewId)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => review.ReviewId)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => review.Content)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => review.Content)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => review.Rating)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => review.Rating)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => review.CreatedUtc)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => review.CreatedUtc)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => review.ModifiedUtc)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => review.ModifiedUtc)
+                </dd>
+
+            </dl>
+        </div>
+     }
+
+<p style="font-size:large;">
+    @Html.ActionLink("Back to List", "AllShows","Show") |
+    @Html.ActionLink("Create Review", "CreateShowReview","Review", new { ID=Model.Show.ShowId}, null)
+</p>
