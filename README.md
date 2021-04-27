@@ -29,10 +29,17 @@ The use of different attributes and dependency helps users to be redirected to t
 
 Resources Implemented
 ASP.NET MVC 5- Working with Files- https://www.mikesdotnetting.com/article/259/asp-net-mvc-5-with-ef-6-working-with-files
+
 Bind Multiple Moodels on a View- https://www.codeproject.com/Articles/1108855/ways-to-Bind-Multiple-Models-on-a-View-in-MVC
+
 Implementing Uniqueness or Unique Key Attribute- https://www.codeproject.com/Articles/1130342/Best-Ways-of-Implementing-Uniqueness-or-Unique-K
+
 DateTime Issues- https://www.codeproject.com/Tips/1078167/DateTime-Issue-In-MVC
+
 Working with Enums- https://odetocode.com/blogs/scott/archive/2012/09/04/working-with-enums-and-templates-in-asp-net-mvc.aspx
+
 Adding a New Field- https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-aspnet-mvc4/adding-a-new-field-to-the-movie-model-and-table
+
 Implement Search and Sort- https://www.c-sharpcorner.com/UploadFile/219d4d/implement-search-paging-and-sort-in-mvc-5/
+
 Adding Search and Sort- https://docs.microsoft.com/en-us/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/sorting-filtering-and-paging-with-the-entity-framework-in-an-asp-net-mvc-application
