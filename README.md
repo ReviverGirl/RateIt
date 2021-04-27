@@ -1,6 +1,8 @@
 # RateIt
 Hello darkness my old friend im here to push this once again
+
 RateMeMVC
+
 Eleven Fifty Academy Red Badge Final Project
 
 Requirements
